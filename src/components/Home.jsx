@@ -1,12 +1,16 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'  // the file path
+import Banner from './Banner'
 
 function Home() {
   return (
     <div>
 <Header/>
-    <h1>Hey there People I am from Home Component</h1>
+<Banner/>
+
+<Footer/>
+  
 
     </div>
   )
