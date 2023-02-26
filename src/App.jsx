@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import './App.css'
 import Home from './components/Home'
 import Todo from './components/Todo'
+import Calculator from './components/Calculator'
 
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
 
   return (
     <div className="App">
-    <Todo/>
+  
+  <Calculator/>
   
    
     </div>
