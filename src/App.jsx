@@ -4,7 +4,8 @@ import './App.css'
 import Home from './components/Home'
 import Todo from './components/Todo'
 import Calculator from './components/Calculator'
-import ListItems from './components/ListItems'
+import {ListItems} from './components/ListItems'
+import Tableitems from './components/Tableitems'
 
 
 function App() {
@@ -13,7 +14,14 @@ function App() {
   return (
     <div className="App">
   
-<ListItems/>  
+  {
+    /**
+     * <ListItems/> 
+     *  <Tableitems/>
+     */
+  }
+ 
+<Todo/>
    
     </div>
   )

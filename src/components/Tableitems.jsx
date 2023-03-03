@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const ListItems = () => {
+const Tableitems = () => {
     const data=[
         {
           "_id": "6402142f588fc1371777a164",
@@ -48,22 +48,37 @@ export const ListItems = () => {
   return (
     <div>
 
-{
-    // Jsx expression
-    data.map((ele)=>{
-       return <div style={{border:"1px solid black"}}>
-        <li>{ele.name}</li>
-        <li>{ele.age}</li>
-        <li>{ele._id}</li>
-        
-        </div>
-    })
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+    {
+        data.map(ele=>(
+ <tr>
+<th scope="row">{ele._id}</th>
+<td colspan="2">{ele.name}</td>
+<td>{ele.age}</td>
+<td>{ele.address}</td>
 
-}
+</tr>
+        ))
+
+
+    }
+
+  </tbody>
+</table>
+
 
 
     </div>
   )
 }
 
-//export default ListItems
+export default Tableitems

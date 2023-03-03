@@ -2,17 +2,13 @@ import React from 'react'
 import { useState } from 'react';  // its inbuilt in react  and with the help of this you can manage state of the component
 // hooks are just functions doing some special things
 const Todo = () => {
-   const [state,setState]= useState("");
-   const [list,setList]=useState(["apple","banana","cat","dog","elephant"])
-  
+   const [state,setState]= useState("Something sgsgsgsgsgsgsgsg");
+   const [newState,changeNewState]=useState("");
   const type="text";
 
 
   function addTodo(){
-    // every time its called it will create a new array 
-    let newArray=[...list,state];
-    
-    setList(newArray);
+    changeNewState(state.toLocaleUpperCase())
   }
 
   const handleChange=(event)=>{
@@ -21,7 +17,8 @@ const Todo = () => {
 
   return (
     <div className='row'>
-   
+         <h1 style={{marginTop:"50px" ,marginLeft:"600px"}}>{state}</h1>
+         <h1 style={{marginTop:"50px" ,marginLeft:"600px"}}>{newState}</h1>
 
 
         <div className='col-4 offset-5'>
@@ -34,21 +31,6 @@ const Todo = () => {
     Add To Do
   </button>
 
-
-        </div>
-
-        <div style={{marginTop:"40px",border:"1px solid green"}} className="col-6 offset-3">
-        <ul class="list-group">
-
-
-
-          {
-            list.map(ele=>(
-              <li class="list-group-item">{ele}</li>
-
-            ))
-          }
-          </ul>
 
         </div>
 
