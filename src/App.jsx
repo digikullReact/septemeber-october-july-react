@@ -6,11 +6,17 @@ import Todo from './components/Todo'
 import Calculator from './components/Calculator'
 import {ListItems} from './components/ListItems'
 import Tableitems from './components/Tableitems'
+import Todo2 from './components/Todo2'
 
 
 function App() {
   const [count, setCount] = useState(0)
+  const someData="I am from parent 222";
+  const dataFun=()=>{
+console.log(99)
+  }
 
+  // PROPS --->PARENT TO CHILD ONLY
   return (
     <div className="App">
   
@@ -21,7 +27,7 @@ function App() {
      */
   }
  
-<Todo/>
+<Todo2 somethingElse={someData} dataFun={dataFun}/>
    
     </div>
   )
