@@ -4,6 +4,7 @@ import './App.css'
 import Home from './components/Home'
 import Todo from './components/Todo'
 import Calculator from './components/Calculator'
+import ListItems from './components/ListItems'
 
 
 function App() {
@@ -12,8 +13,7 @@ function App() {
   return (
     <div className="App">
   
-  <Calculator/>
-  
+<ListItems/>  
    
     </div>
   )
