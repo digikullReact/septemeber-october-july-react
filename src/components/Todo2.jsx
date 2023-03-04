@@ -1,10 +1,11 @@
 import React from 'react'
 
 import { useState } from 'react';  // its inbuilt in react  and with the help of this you can manage state of the component
+import SingleItem from './partials/SingleItem';
 // hooks are just functions doing some special things
 const Todo2 = (props) => {
   //console.log("Data------",props)
-  props.dataFun();
+  //props.dataFun();
    const [state,setState]= useState("");
    const [state2,setState2]= useState("");
 
@@ -55,7 +56,8 @@ const Todo2 = (props) => {
 
           {
             list.map(ele=>(
-              <li class="list-group-item">{ele}</li>
+              <SingleItem somkey={ele}/>
+             
 
             ))
           }

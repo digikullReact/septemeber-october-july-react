@@ -27,7 +27,8 @@ console.log(99)
      */
   }
  
-<Todo2 somethingElse={someData} dataFun={dataFun}/>
+ <Todo2/>
+ <Todo/>
    
     </div>
   )
