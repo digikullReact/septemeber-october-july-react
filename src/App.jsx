@@ -7,13 +7,14 @@ import Calculator from './components/Calculator'
 import {ListItems} from './components/ListItems'
 import Tableitems from './components/Tableitems'
 import Todo2 from './components/Todo2'
+import Child from './components/Child'
 
 
 function App() {
   const [count, setCount] = useState(0)
   const someData="I am from parent 222";
-  const dataFun=()=>{
-console.log(99)
+  const sum=(a,b)=>{
+console.log(a+b);
   }
 
   // PROPS --->PARENT TO CHILD ONLY
@@ -24,11 +25,13 @@ console.log(99)
     /**
      * <ListItems/> 
      *  <Tableitems/>
+     *  <Todo2/>
+ <Todo/>
      */
   }
  
- <Todo2/>
- <Todo/>
+ <Child add={sum}/>
+
    
     </div>
   )
