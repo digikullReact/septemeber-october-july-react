@@ -2,6 +2,39 @@ import React, { useState,useEffect } from 'react';
 import axios from 'axios';
 
 const Products = () => {
+
+    /**
+     * 
+
+    // mounting behaviour
+    useEffect(function(){
+        getProducts();
+    },[])
+
+    // updation behaviour 
+
+
+    useEffect(function(){
+        getProducts();
+    })
+
+  
+    useEffect(function(){
+        getProducts();
+    },[dependency])
+
+
+
+    // unmounting behaviour
+    useEffect(function(){
+
+        return ()=>{
+            // inside this function you can observe the unmounting behaviour
+        }
+    
+    },[])
+
+     */
     const [state,setState]=useState([]);
 
     const getProducts=()=>{
