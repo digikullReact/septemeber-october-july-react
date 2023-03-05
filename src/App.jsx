@@ -8,6 +8,7 @@ import {ListItems} from './components/ListItems'
 import Tableitems from './components/Tableitems'
 import Todo2 from './components/Todo2'
 import Child from './components/Child'
+import ApiCall from './components/ApiCall'
 
 
 function App() {
@@ -27,12 +28,13 @@ console.log(a+b);
      *  <Tableitems/>
      *  <Todo2/>
      *  <Child add={sum}/>
+     *  <Todo/>
 
      */
   }
  
- <Todo/>
 
+<ApiCall/>
    
     </div>
   )
