@@ -5,10 +5,20 @@ const URL="http://localhost:8080"
 // component gets redone ---happens again
 const ApiCall = () => {
   const [state,setState]=useState([]);
+  const [toggle,setToggle]=useState(10);
+  const [input,setInput]=useState("");
 
   const handleClick=()=>{
     setToggle(toggle+1);
   }
+
+  const handleChange=(event)=>{
+    setInput(event.target.value) // its not synhcronous -->it is async
+    console.log(input);
+
+  }
+
+ // handleClick();---->if you are directly calling the method that changes state in the component it will cause ifnfinite loop
 
   // We will create a function to fetch the data from axios
 
@@ -19,11 +29,14 @@ const ApiCall = () => {
   //  console.log(response.data);
 
   setState(response.data); // --->component re renders --->getapidata--->setState-->compoenent re render--->getApiData
+  ///console.log("hey state",state);
    }).catch(err=>{
     console.log(err);
    })
 
     }
+
+
 
 
     // mounting behaviour ---mounting happens only once
@@ -50,6 +63,7 @@ const ApiCall = () => {
 
   return (
     <div>
+      <h1>{toggle}</h1>
       {
         state.map(ele=>(
           <li key={ele._id}>{ele._source.name}</li>
@@ -57,6 +71,11 @@ const ApiCall = () => {
         ))
       }
 
+      <input type="text" onChange={handleChange} />
+
+<button onClick={handleClick}>
+  Click Me
+</button>
 
     </div>
   )

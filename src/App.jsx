@@ -9,6 +9,7 @@ import Tableitems from './components/Tableitems'
 import Todo2 from './components/Todo2'
 import Child from './components/Child'
 import ApiCall from './components/ApiCall'
+import Products from './components/Products'
 
 
 function App() {
@@ -29,12 +30,12 @@ console.log(a+b);
      *  <Todo2/>
      *  <Child add={sum}/>
      *  <Todo/>
-
+<ApiCall/>
      */
   }
  
 
-<ApiCall/>
+<Products/>
    
     </div>
   )
