@@ -26,11 +26,12 @@ console.log(a+b);
      * <ListItems/> 
      *  <Tableitems/>
      *  <Todo2/>
- <Todo/>
+     *  <Child add={sum}/>
+
      */
   }
  
- <Child add={sum}/>
+ <Todo/>
 
    
     </div>
