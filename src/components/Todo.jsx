@@ -4,7 +4,7 @@ import SingleItem from './partials/SingleItem';
 // hooks are just functions doing some special things
 const Todo = () => {
    const [state,setState]= useState("");
-   const [list,setList]=useState([{name:"apple",isEdit:false},{name:"banana",isEdit:false},{name:"cat",isEdit:false}]);
+   const [list,setList]=useState([{name:"apple",isEdit:false,isDone:false},{name:"banana",isEdit:false,isDone:false},{name:"cat",isEdit:false,isDone:false}]);
    const [isEdit,setIsEdit]=useState(false);
   
   const type="text";
@@ -12,7 +12,7 @@ const Todo = () => {
 
   function addTodo(){
     // every time its called it will create a new array 
-    let newArray=[...list,{name:state,isEdit:false}];
+    let newArray=[...list,{name:state,isEdit:false,isDone:false}];
     
     setList(newArray);
   }
@@ -43,19 +43,52 @@ const Todo = () => {
   const editItem=(value)=>{
 
     // so just filtering out the item and then 
-  let item=  list[value]; 
-  list.splice(value,1);  // item removed from original array -->
-  item.isEdit=true;
-  setList([...list,item])
+  //let item=  list[value]; 
+  //list.splice(value,1);  // item removed from original array -->
+  ///item.isEdit=true;
+  //setList([...list,item])
 
     //setIsEdit(true);
 
 
     // your task ---->
     // 1- make the functionality dont push it in the end --->
+    let newList=list.map((ele,i)=>{
+      if(i==value){
+        ele.isEdit=true;
+      }
+return ele;
+    })
+    setList(newList)
+
     // 2- make the edit work
    
  
+   }
+
+   const doneItem=(index)=>{
+   
+    let newList=list.map((ele,i)=>{
+      if(i==index){
+        ele.isDone=true;
+       
+      }
+     
+return ele;
+    })
+   
+    setList(newList)
+   }
+   const saveEditItem=(value,index)=>{
+    // it will save the edited item 
+    let newList=list.map((ele,i)=>{
+      if(i==index){
+        ele.isEdit=false;
+        ele.name=value;
+      }
+return ele;
+    })
+    setList(newList)
    }
 
   return (
@@ -77,13 +110,13 @@ const Todo = () => {
         </div>
 
         <div style={{marginTop:"40px",border:"1px solid green"}} className="col-6 offset-3">
-        <ul class="list-group">
+        <ul className="list-group">
 
 
 
           {
             list.map((ele,i)=>(
-             <SingleItem key={i}  isEdit={ele.isEdit} index={i} somkey={ele.name} editItem={editItem} deleteItem={deleteItem} />
+             <SingleItem key={i}  doneItem={doneItem} saveEditItem={saveEditItem}  isEdit={ele.isEdit} index={i} somkey={ele.name} editItem={editItem} deleteItem={deleteItem} />
             ))
           }
           </ul>

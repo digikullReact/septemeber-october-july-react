@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const SingleItem = (props) => {
+  const [input ,setInput]=useState(props.somkey);
 
   /// --->
-  const handleChange=()=>{
+  const handleChange=(event)=>{
+    setInput(event.target.value);
 
   }
 
@@ -11,7 +13,7 @@ const SingleItem = (props) => {
     <>
         <li  className="list-group-item" >
           {
-            props.isEdit? <input type={"text"} value={props.somkey} onChange={handleChange}/>: <>{props.somkey}</>
+            props.isEdit? <input type={"text"} value={input} onChange={handleChange}/>: < >{props.somkey}</>
           }
           
          
@@ -25,12 +27,31 @@ const SingleItem = (props) => {
   Delete
 </button>
 
-
 <button onClick={function(){
-  return props.editItem(props.index)
+  return props.doneItem(props.index)
 }}>
-  Edit
+  Done
 </button>
+
+{
+   props.isEdit?
+  <button onClick={function(){
+    return props.saveEditItem(input,props.index)
+  }}>
+    Save
+  </button>
+  :
+
+  <button onClick={function(){
+    return props.editItem(props.index)
+  }}>
+    Edit
+  </button>
+  
+
+}
+
+
         </li>
 
 

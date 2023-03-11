@@ -22,6 +22,7 @@ console.log(a+b);
   // PROPS --->PARENT TO CHILD ONLY
   return (
     <div className="App">
+      
   
   {
     /**
@@ -30,12 +31,13 @@ console.log(a+b);
      *  <Todo2/>
      *  <Child add={sum}/>
      *  <Todo/>
+     * <Products/>
 <ApiCall/>
      */
   }
  
+ <Todo/>
 
-<Products/>
    
     </div>
   )
