@@ -11,7 +11,7 @@ const SingleItem = (props) => {
 
   return (
     <>
-        <li  className="list-group-item" >
+        <li  className="list-group-item"  style={{textDecoration:props.done==true? "line-through":""}}>
           {
             props.isEdit? <input type={"text"} value={input} onChange={handleChange}/>: < >{props.somkey}</>
           }

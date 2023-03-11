@@ -116,7 +116,7 @@ return ele;
 
           {
             list.map((ele,i)=>(
-             <SingleItem key={i}  doneItem={doneItem} saveEditItem={saveEditItem}  isEdit={ele.isEdit} index={i} somkey={ele.name} editItem={editItem} deleteItem={deleteItem} />
+             <SingleItem key={i} done={ele.isDone} doneItem={doneItem} saveEditItem={saveEditItem}  isEdit={ele.isEdit} index={i} somkey={ele.name} editItem={editItem} deleteItem={deleteItem} />
             ))
           }
           </ul>
